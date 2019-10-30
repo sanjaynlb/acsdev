@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="catalog_product_save_before">
+        <observer name="save_after" instance="Abhijit\Package\Observer\Productsavebefore" />
+    </event>
+    <event name="catalog_product_edit_action">
+    	<observer name="catalog_product_edit_action" instance="Abhijit\Package\Observer\Editaction" />
+    </event>
+</config>
