@@ -41,10 +41,10 @@ class ProductDataProvider extends \Magento\Catalog\Ui\DataProvider\Product\Form\
         unset($meta['related']);
         unset($meta['product-details']['children']['container_news_from_date']);
         unset($meta['product-details']['children']['container_news_to_date']);
-        unset($meta['product-details']['children']['quantity_and_stock_status_qty']);
-        unset($meta['product-details']['children']['container_quantity_and_stock_status']);
-        unset($meta['product-details']['children']['container_weight']);
-        unset($meta['product-details']['children']['container_weight_type']);
+        // unset($meta['product-details']['children']['quantity_and_stock_status_qty']);
+        // unset($meta['product-details']['children']['container_quantity_and_stock_status']);
+        // unset($meta['product-details']['children']['container_weight']);
+        // unset($meta['product-details']['children']['container_weight_type']);
         unset($meta['product-details']['children']['container_price_rate']);
         unset($meta['product-details']['children']['container_category_ids']['children']['create_category_button']);
 

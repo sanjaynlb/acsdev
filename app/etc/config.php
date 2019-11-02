@@ -215,7 +215,6 @@ return [
         'Magento_Wishlist' => 1,
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistGraphQl' => 1,
-        'Abhijit_Customcart' => 1,
         'Abhijit_Membertype' => 1,
         'Abhijit_Package' => 1,
         'Amazon_Core' => 1,

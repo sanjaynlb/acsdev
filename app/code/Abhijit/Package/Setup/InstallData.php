@@ -172,7 +172,7 @@ class InstallData implements InstallDataInterface
                 'sort_order' => 1,
                 'global' => \Magento\Catalog\Model\ResourceModel\Eav\Attribute::SCOPE_STORE,
                 'used_in_product_listing' => true,
-                'apply_to'                => 'membership',  
+                'apply_to' => 'membership',  
                 'visible_on_front' => false
             ],
 

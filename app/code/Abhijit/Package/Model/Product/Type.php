@@ -99,7 +99,7 @@ class Type extends \Magento\Catalog\Model\Product\Type
             $productTypes = $this->_config->getAll();
         
             foreach ($productTypes as $productTypeKey => $productTypeConfig) {
-                if($productTypeKey == 'simple' || $productTypeKey == 'membership'){
+                if($productTypeKey == 'simple' || $productTypeKey == 'membership' ){
                     $productTypes[$productTypeKey]['label'] = __($productTypeConfig['label']);
                 }else{
                     unset($productTypes[$productTypeKey]);

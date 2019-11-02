@@ -21,7 +21,7 @@ class UpgradeData implements UpgradeDataInterface
         /** @var EavSetup $eavSetup */
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
 
-        if (version_compare($context->getVersion(), '1.0.7', '<')) {
+        if (version_compare($context->getVersion(), '1.0.8', '<')) {
 
             $entityType = $eavSetup->getEntityTypeId('catalog_product');
 
@@ -61,6 +61,7 @@ class UpgradeData implements UpgradeDataInterface
                 'cost',
                 'tier_price',
                 'weight',
+                'weight_type'
             ];
  
         // make these attributes applicable to new product type
@@ -81,6 +82,7 @@ class UpgradeData implements UpgradeDataInterface
                 );
             }
         }
+       
 
         $remove_fields = ['news_from_date','news_to_date','quantity_and_stock_status','weight','weight_type'];
 

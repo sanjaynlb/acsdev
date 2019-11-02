@@ -54,7 +54,7 @@ class Product extends \Magento\Catalog\Block\Adminhtml\Product
         );      
 
         foreach ($types as $typeId => $type) {
-            if($typeId == 'simple' || $typeId == 'membership' || $typeId == 'grouped' ){
+            if($typeId == 'simple' || $typeId == 'membership' || $typeId == 'grouped' || $typeId == 'virtual' ){
 
                 $label = __($type['label']);
                 if($typeId == 'membership'){
