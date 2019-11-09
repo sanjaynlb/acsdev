@@ -1,0 +1,60 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+    $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+    $_product = $block->getProduct();
+?>
+<?php if ($_additional = $block->getAdditionalData()) :?>
+    <div class="additional-attributes-wrapper table-wrapper">
+        <table class="data table additional-attributes" id="product-attribute-specs-table">
+            <caption class="table-caption"><?= $block->escapeHtml(__('More Information')) ?></caption>
+            <tbody>
+            <?php foreach ($_additional as $_data) :?>
+                <tr>
+                    <th class="col label" scope="row"><?= $block->escapeHtml($_data['label']) ?></th>
+                    <td class="col data" data-th="<?= $block->escapeHtmlAttr($_data['label']) ?>"><?= /* @noEscape */ $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+<?php endif;?>
+<div>
+               <?php 
+                        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                        $product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+                        $type = $product->getTypeId();
+
+                        if($type == "membership" || $product->getData('product_ids') != ""){
+                            $product_ids_in_string = $product->getData('product_ids');
+                            $product_ids = explode(",",$product_ids_in_string);                        
+                       
+                ?>                            
+                            <p><i><h2>Products under the package: </h2></i></p>
+                            <ul>
+                                <?php
+                                    foreach ($product_ids as $id){
+                                        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                                        $product = $objectManager->create('Magento\Catalog\Model\Product')->load($id);
+                                ?>
+                                    <li style="color:red"><?= $product->getName() ?></li>
+                                <?php
+                                    }
+                                ?>
+                            </ul>   
+                <?php
+                    }
+                ?>              
+</div>
