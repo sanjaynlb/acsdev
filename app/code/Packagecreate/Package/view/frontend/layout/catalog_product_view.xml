@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance dc" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+   <referenceBlock name="product.info.details">
+
+       <action method="setTemplate">
+
+           <argument name="template" xsi:type="string">Packagecreate_Package::details.phtml</argument>
+
+       </action>
+
+   </referenceBlock>
+   <referenceBlock name="product.attributes">
+
+       <action method="setTemplate">
+
+           <argument name="template" xsi:type="string">Packagecreate_Package::attributes.phtml</argument>
+
+       </action>
+
+   </referenceBlock>
+   <referenceBlock name="product.info.review" remove="true" />
+
+</page>
